@@ -10,9 +10,16 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var helloLabel: UILabel!
+    @IBOutlet weak var nameText: UITextField!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        nameText.placeholder = "입력을 하세요~~~"
+        nameText.clearButtonMode = UITextFieldViewMode.whileEditing
+        nameText.borderStyle = UITextBorderStyle.line
     }
 
     override func didReceiveMemoryWarning() {
@@ -20,6 +27,13 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
+    
+    
+    @IBAction func nameButton(_ sender: UIButton) {
+        helloLabel.text = "Hello" + " \(nameText.text!)"
+        nameText.text = ""
+        //키패드를 내림
+        nameText.resignFirstResponder()
+    }
 }
 
