@@ -35,5 +35,12 @@ class ViewController: UIViewController {
         //키패드를 내림
         nameText.resignFirstResponder()
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        nameText.resignFirstResponder()
+    }
+    
+    
+    
 }
 
