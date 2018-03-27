@@ -17,9 +17,8 @@ class ViewController: UIViewController,UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        // UITextFieldDelegate 객체와 viewController 객체와 연결
-        nameText.delegate = self
         
+        nameText.delegate = self // UITextFieldDelegate 객체와 viewController 객체와 연결을 해야만 가능함! (커넥션) 
         nameText.placeholder = "입력을 하세요~~~" //Main.storyboard의 placeholder에서 설정 가능함
         nameText.clearButtonMode = UITextFieldViewMode.whileEditing
         nameText.borderStyle = UITextBorderStyle.line //이건뭐지?
@@ -54,7 +53,7 @@ class ViewController: UIViewController,UITextFieldDelegate {
     
     //claer 버튼을 눌렀을때 실행 되는것
     func textFieldShouldClear(_ textField: UITextField) -> Bool {
-        view.backgroundColor = UIColor.green
+        nameText.backgroundColor = UIColor.green
         return true
     }
 }
